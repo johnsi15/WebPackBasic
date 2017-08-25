@@ -16,10 +16,24 @@ alert(funcitonMensaje(mensaje)); */
 const personas = require('./mensaje.js');
 const $ = require('jquery');
 
+// Cargar files de css en el app.js sin necesidad de agregan un link en el html
+require('!style-loader!css-loader!./style.css');
+
 // console.log(personas);
 
 // $('body').append(`<h1>${personas[0].name}</h1>`);
-$('#h1').html(`${personas[1].name}`);
+
+// Con la function map
+/* personas.map((data) => {
+  $('#h1').append(` Nombre: ${data.name} Edad: ${data.age} `);
+  // console.log(data)
+}); */
+
+// Con jquery
+$.each(personas, function (key, value) {
+  // console.log(value)
+  $('body').append(` ${value.name} ${value.age} `);
+});
 
 /* 
   Nota: recordar siempre correr webpack.
