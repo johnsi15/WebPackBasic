@@ -16,4 +16,5 @@ const $ = require('jquery');
 
 // console.log(personas);
 
-$('body').append(`<h1>${personas[0].name}</h1>`);
+// $('body').append(`<h1>${personas[0].name}</h1>`);
+$('#h1').html(`${personas[0].name}`);
