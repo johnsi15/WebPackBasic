@@ -142,7 +142,7 @@ const Personas = [
   },
   {
     name: 'Andrey',
-    age: 25
+    age: 18
   }
 ]
 
@@ -10429,8 +10429,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!./node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -10448,7 +10448,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n  background-color: #004455;\r\n  color: #ffffff;\r\n}", ""]);
+exports.push([module.i, "body {\r\n  background-color: #C13535;\r\n  color: #ffffff;\r\n  font-size: 20px;\r\n}", ""]);
 
 // exports
 

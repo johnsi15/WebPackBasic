@@ -17,7 +17,9 @@ const personas = require('./mensaje.js');
 const $ = require('jquery');
 
 // Cargar files de css en el app.js sin necesidad de agregan un link en el html
-require('!style-loader!css-loader!./style.css');
+// require('!style-loader!css-loader!../css/style.css');
+// Con los loaders configurados en el webpack.config.js no es necesario darle toda la path
+require('../css/style.css');
 
 // console.log(personas);
 

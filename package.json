@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
   },
   "eslintConfig": {
     "env": {
