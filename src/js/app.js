@@ -14,7 +14,10 @@ alert(funcitonMensaje(mensaje)); */
   Cargando jquery.
 */
 const personas = require('./mensaje.js');
-const $ = require('jquery');
+// const $ = require('jquery');
+
+// Esto es gracias a babel
+import $ from 'jquery';
 
 // Cargar files de css en el app.js sin necesidad de agregan un link en el html
 // require('!style-loader!css-loader!../css/style.css');

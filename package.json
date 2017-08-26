@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
+    "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
+    "build": "webpack",
+    "dev": "webpack -w",
+    "prod": "webpack -p"
   },
   "eslintConfig": {
     "env": {
@@ -15,7 +17,9 @@
       "node": true,
       "jquery": true
     },
+    "parser": "babel-eslint",
     "rules": {
+      "strict": 0,
       "no-console": "warn",
       "no-use-before-define": "warn",
       "spaced-comment": "warn"
@@ -26,13 +30,19 @@
     "/node_modules/*",
     "build/*",
     "!build/index.js",
-    "bundle.js"
+    "dist/"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
     "css-loader": "^0.28.5",
+    "eslint": "^3.19.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5"
   },
