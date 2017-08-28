@@ -44,9 +44,11 @@
     "css-loader": "^0.28.5",
     "eslint": "^3.19.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0"
   },
   "dependencies": {
+    "express": "^4.15.4",
     "jquery": "^3.2.1"
   }
 }

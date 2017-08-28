@@ -33,6 +33,7 @@ const path = require('path');
 //   }
 // };
 
+// Example 2 y es la mejor opcion hasta el momento.
 /* 
   En esta configuración agregamos publicPath para correr en el start webpack-dev-server,
   "start": "webpack-dev-server",
@@ -40,7 +41,7 @@ const path = require('path');
 
   Con el test: .jsx?$ podemos traspilar files de js y de jxs.
 */
-module.exports = {
+/* module.exports = {
   entry: './src/js/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -69,4 +70,54 @@ module.exports = {
       }
     ]
   }
+}; */
+
+
+// Example 3
+/* 
+  Otra forma de exportar la config de webpak es de la siguiente forma,
+  no olvidarse del path que se require en la parte superior del código,
+  Nota: Recordar que el publicPath se usa para correr el webpack-dev-server 
+*/
+
+/* 
+  No necesito indicarle el file en el entry porque node reconoce que es un index.js
+  Nota si fuera otro nombre si ay que expecificarlo ./src/app.js example 
+  devtool: 'source-map' se usa para ver donde estan los errores no crea un file y no indica donde estan los errores.
+
+  En esta configuración usamos webpack con express es casi lo mismo que webpack-dev-server
+*/
+
+// revisar porque no me deja colocar otra ruta diferente a la de la raiz.
+const config = {
+  entry: './src',
+  output: {
+    path: path.resolve(__dirname, '/'),
+    filename: 'bundle.js'
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'es2016'],
+            plugins: []
+          }
+        }
+      }
+    ]
+  }
 };
+
+module.exports = config;
