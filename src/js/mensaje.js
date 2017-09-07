@@ -22,7 +22,7 @@ const Personas = [
     age: 24
   },
   {
-    name: 'Andrey',
+    name: 'Andrey Serrano',
     age: 25
   }
 ]

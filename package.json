@@ -7,7 +7,8 @@
     "start": "webpack-dev-server",
     "build": "webpack",
     "dev": "webpack -w",
-    "prod": "webpack -p"
+    "prod": "webpack -p",
+    "server": "node index.js"
   },
   "eslintConfig": {
     "env": {
@@ -46,7 +47,8 @@
     "eslint": "^3.19.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
-    "webpack-dev-middleware": "^1.12.0"
+    "webpack-dev-middleware": "^1.12.0",
+    "html-webpack-plugin": "^2.30.1"
   },
   "dependencies": {
     "express": "^4.15.4",
